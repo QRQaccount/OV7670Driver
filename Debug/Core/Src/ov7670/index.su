@@ -1,8 +1,0 @@
-index.c:2:6:OV7670_CLK_Init	32	static
-index.c:15:6:OV7670_CLK_Off	32	static
-index.c:26:6:OV7670_GPIO_Init	32	static
-index.c:36:9:OV7670_Write_Reg	16	static
-index.c:60:9:OV7670_Read_Reg	16	static
-index.c:91:6:OV7670_Window_Config	32	static
-index.c:120:6:OV7670_Set_Regs	8	static
-index.c:283:9:OV7670_Init	8	static

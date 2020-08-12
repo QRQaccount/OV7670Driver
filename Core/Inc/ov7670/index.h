@@ -47,7 +47,7 @@ uint8_t OV7670_Write_Reg(uint8_t regId, uint8_t regData);
 uint8_t OV7670_Read_Reg(uint8_t regId, uint8_t *regData);
 
 /**
- * @brief Ov7670采集窗口大小配置函数
+ * @brfixief Ov7670采集窗口大小配置函数
  * @param startX 水平坐标起始位置
  * @param startY 竖直坐标起始位置
  * @param width 窗口宽度
