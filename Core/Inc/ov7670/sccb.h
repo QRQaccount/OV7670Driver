@@ -2,9 +2,16 @@
 #define _SCCB_H
 #include "stm32f4xx_hal.h"
 
-#include "user_laber.h"
 #define SCCB_SID_RCC __HAL_RCC_GPIOA_CLK_ENABLE()
 #define SCCB_SIC_RCC __HAL_RCC_GPIOA_CLK_ENABLE()
+
+//设置SCCB中SIC,SID端口的别名
+
+#define SCCB_SIC_BIT_Pin GPIO_PIN_4
+#define SCCB_SIC_BIT_GPIO_Port GPIOA
+#define SCCB_SID_BIT_Pin GPIO_PIN_5
+#define SCCB_SID_BIT_GPIO_Port GPIOA
+
 #define SCCB_SID_High HAL_GPIO_WritePin(SCCB_SID_BIT_GPIO_Port, SCCB_SID_BIT_Pin, GPIO_PIN_SET)
 #define SCCB_SID_Low HAL_GPIO_WritePin(SCCB_SID_BIT_GPIO_Port, SCCB_SID_BIT_Pin, GPIO_PIN_RESET)
 #define SCCB_SIC_High HAL_GPIO_WritePin(SCCB_SIC_BIT_GPIO_Port, SCCB_SIC_BIT_Pin, GPIO_PIN_SET)

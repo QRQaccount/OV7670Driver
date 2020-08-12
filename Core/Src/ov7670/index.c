@@ -1,39 +1,6 @@
 #include "ov7670/index.h"
 #include "sccb.h"
 #include "delay_ex/delay.h"
-void OV7670_CLK_Init()
-{
-    GPIO_InitTypeDef GPIO_InitStruct = {0};
-    OV7670_CLK_RCC;
-    GPIO_InitStruct.Pin = OV7670_CLK_Pin;
-    GPIO_InitStruct.Alternate = GPIO_AF0_MCO;
-    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-    GPIO_InitStruct.Pin = OV7670_CLK_Pin;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FAST;
-    HAL_GPIO_Init(OV7670_CLK_GPIO_Port, &GPIO_InitStruct);
-}
-
-void OV7670_CLK_Off()
-{
-    GPIO_InitTypeDef GPIO_InitStruct = {0};
-    OV7670_CLK_RCC;
-    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FAST;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Pin = OV7670_CLK_Pin;
-    HAL_GPIO_Init(OV7670_CLK_GPIO_Port, &GPIO_InitStruct);
-}
-
-void OV7670_GPIO_Init()
-{
-    GPIO_InitTypeDef GPIO_InitStruct = {0};
-    OV7670_GPIO_RCC;
-    GPIO_InitStruct.Pin = OV7670_Input_0_Pin | OV7670_Input_1_Pin | OV7670_Input_2_Pin | OV7670_Input_3_Pin | OV7670_Input_4_Pin | OV7670_Input_5_Pin | OV7670_Input_6_Pin | OV7670_Input_7_Pin;
-    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-    GPIO_InitStruct.Pull = GPIO_PULLDOWN;
-    HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
-}
 
 uint8_t OV7670_Write_Reg(uint8_t regId, uint8_t regData)
 {
